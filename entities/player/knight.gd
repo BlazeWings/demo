@@ -431,6 +431,8 @@ func _tick_timers(delta: float) -> void:
 
 
 func _on_landed() -> void:
+	if _is_dead:
+		return
 	reset_dashes()
 	play_land_squash()
 
@@ -527,7 +529,10 @@ func _wire_components() -> void:
 func _has_anim(anim_name: StringName) -> bool:
 	if sprite == null or sprite.sprite_frames == null:
 		return false
-	return sprite.sprite_frames.has_animation(anim_name)
+	if not sprite.sprite_frames.has_animation(anim_name):
+		return false
+	# 0 帧动画（空目录/加载失败）视为没有该动画，避免 play() 后卡住
+	return sprite.sprite_frames.get_frame_count(anim_name) > 0
 
 
 func _kill_tween(tween: Tween) -> void:

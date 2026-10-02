@@ -16,5 +16,6 @@ func interact() -> void:
 		var health := player.get_node_or_null("Components/HealthComponent") as HealthComponent
 		if health != null:
 			health.reset_health()
+		else:
+			push_warning("[Checkpoint] interact(): %s 上找不到 Components/HealthComponent，未回血" % player.name)
 	GameManager.set_respawn(global_position)
-	print("[Checkpoint] 已存档 at %s" % global_position)

@@ -23,8 +23,8 @@ func _ready() -> void:
 
 
 func set_active(active: bool) -> void:
-	if active:
-		_hit_targets.clear()
+	# 开/关都清空：开是为了本次激活重新去重，关是为了不长期持有可能已释放的 Area2D 引用
+	_hit_targets.clear()
 	monitoring = active
 
 

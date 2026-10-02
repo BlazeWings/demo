@@ -84,7 +84,7 @@ func snap_to_target() -> void:
 	if not _has_target():
 		return
 	_look_ahead = Vector2.ZERO
-	global_position = _focus_position()
+	global_position = _pixel_aligned(_focus_position())
 
 
 func _has_target() -> bool:
@@ -116,7 +116,13 @@ func _follow(delta: float) -> void:
 		_facing = signf(velocity_x)
 	var desired_ahead := Vector2(_facing * look_ahead_distance, 0.0)
 	_look_ahead = _look_ahead.lerp(desired_ahead, clampf(look_ahead_speed * delta, 0.0, 1.0))
-	global_position = global_position.lerp(_focus_position(), clampf(follow_speed * delta, 0.0, 1.0))
+	global_position = _pixel_aligned(global_position.lerp(_focus_position(), clampf(follow_speed * delta, 0.0, 1.0)))
+
+
+## 像素风 640x360 integer 缩放下，相机基准位取整避免亚像素抖动。
+## 只取整跟随基准位，trauma 震屏的 offset/rotation 不动。
+func _pixel_aligned(value: Vector2) -> Vector2:
+	return Vector2(roundf(value.x), roundf(value.y))
 
 
 ## Duck-typed read of CharacterBody2D.velocity; anything else counts as standing still.

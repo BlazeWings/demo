@@ -60,7 +60,6 @@ func launch(direction: Vector2) -> void:
 func on_shot_down() -> void:
 	if _destroyed:
 		return
-	GameManager.add_soul(2)
 	_destroy()
 
 

@@ -14,13 +14,15 @@ static func build(anim_dirs: Dictionary) -> SpriteFrames:
 		var fps: float = float(config.get("fps", 8))
 		var loop: bool = bool(config.get("loop", true))
 		var anim := StringName(anim_name)
+		var frame_paths := _list_pngs(dir_path)
+		if frame_paths.is_empty():
+			# 目录不存在/没有 PNG：跳过该动画，不要留一个 0 帧动画进 SpriteFrames
+			push_warning("SpriteFramesBuilder: no PNG found in \"%s\" for animation \"%s\" (animation skipped)." % [dir_path, anim_name])
+			continue
 		if not frames.has_animation(anim):
 			frames.add_animation(anim)
 		frames.set_animation_speed(anim, fps)
 		frames.set_animation_loop(anim, loop)
-		var frame_paths := _list_pngs(dir_path)
-		if frame_paths.is_empty():
-			push_warning("SpriteFramesBuilder: no PNG found in \"%s\" for animation \"%s\"." % [dir_path, anim_name])
 		for path in frame_paths:
 			var texture := load(path) as Texture2D
 			if texture != null:

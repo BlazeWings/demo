@@ -35,6 +35,9 @@ func _ready() -> void:
 
 
 func start() -> void:
+	if player == null:
+		push_error("PlayerStateMachine: player 未接线（应为父节点 Player），状态机未启动")
+		return
 	if current_state != null or initial_state == null:
 		return
 	current_state = initial_state

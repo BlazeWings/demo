@@ -77,6 +77,7 @@ func _bind_player() -> void:
 	if declared is int or declared is float:
 		maximum = int(declared)
 	_apply_health(current, maximum)
+	set_process(false)   # 信号已绑定，停止重试轮询
 
 
 ## Depth-first search for a node exposing the HealthComponent signal/API (§3).
