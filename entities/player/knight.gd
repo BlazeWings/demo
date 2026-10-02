@@ -354,7 +354,8 @@ func _start_invulnerability() -> void:
 func play_anim(anim_name: StringName) -> void:
 	if not _has_anim(anim_name):
 		return
-	sprite.paused = false
+	# Godot 4.7 的 AnimatedSprite2D 没有 paused 属性（直接赋值会致命报错）。
+	# pause() 之后 is_playing() 返回 false，所以下面的 play() 分支就是"恢复播放"。
 	if sprite.animation == anim_name:
 		if not sprite.is_playing():
 			sprite.play()
@@ -473,7 +474,6 @@ func _build_sprite_frames() -> void:
 		if frames.has_animation(anim_name):
 			frames.set_animation_loop_mode(anim_name, SpriteFrames.LOOP_NONE)
 	sprite.sprite_frames = frames
-	sprite.paused = false
 
 
 func _cache_sprite_layout() -> void:

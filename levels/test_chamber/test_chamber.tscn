@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://cgf0e261686mq"]
+
+[ext_resource type="Script" uid="uid://dd1mocohxcx6b" path="res://levels/test_chamber/test_chamber.gd" id="1_3r6b2"]
+[ext_resource type="Texture2D" uid="uid://5k23l15hmdxq" path="res://assets/sprites/backgrounds/night_1.png" id="2_ohd2f"]
+[ext_resource type="Texture2D" uid="uid://tjl8tfsy5cxb" path="res://assets/sprites/backgrounds/night_2.png" id="3_2wrgw"]
+[ext_resource type="Script" uid="uid://bc82ycdvnj1vj" path="res://camera/game_camera.gd" id="4_rmac6"]
+[ext_resource type="PackedScene" uid="uid://bmva5rnmf4cm3" path="res://ui/hud/hud.tscn" id="5_m4ucg"]
+[ext_resource type="Script" uid="uid://vgiqff5nc5t1" path="res://ui/hud/hud.gd" id="6_yht2b"]
+
+[node name="TestChamber" type="Node2D" unique_id=30942126]
+script = ExtResource("1_3r6b2")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1901838145]
+layer = -1
+
+[node name="FarLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1387716756]
+motion_scale = Vector2(0.3, 0.3)
+motion_mirroring = Vector2(746, 0)
+
+[node name="Night1" type="Sprite2D" parent="ParallaxBackground/FarLayer" unique_id=608912384]
+position = Vector2(0, 190)
+scale = Vector2(2, 2)
+texture = ExtResource("2_ohd2f")
+
+[node name="NearLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1584208581]
+motion_scale = Vector2(0.6, 0.6)
+motion_mirroring = Vector2(746, 0)
+
+[node name="Night2" type="Sprite2D" parent="ParallaxBackground/NearLayer" unique_id=1292484458]
+position = Vector2(0, 143)
+scale = Vector2(2, 2)
+texture = ExtResource("3_2wrgw")
+
+[node name="GameCamera" type="Camera2D" parent="." unique_id=771832854]
+script = ExtResource("4_rmac6")
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1581290140 instance=ExtResource("5_m4ucg")]
+script = ExtResource("6_yht2b")
