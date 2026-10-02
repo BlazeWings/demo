@@ -27,7 +27,7 @@ script = ExtResource("1_0usyd")
 scale = Vector2(0.5, 0.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1070936876]
-position = Vector2(0, 4)
+position = Vector2(0, 19.25)
 shape = SubResource("CapsuleShape2D_pw5te")
 
 [node name="Components" type="Node2D" parent="." unique_id=1925232107]
@@ -40,7 +40,7 @@ max_health = 3
 script = ExtResource("3_udmr7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Components/HurtboxComponent" unique_id=1111929326]
-position = Vector2(0, 3)
+position = Vector2(0, 18.25)
 shape = SubResource("CapsuleShape2D_a01p3")
 
 [node name="AttackHitbox" type="Area2D" parent="." unique_id=2102198812]
@@ -53,7 +53,6 @@ shape = SubResource("RectangleShape2D_mlpll")
 
 [node name="EdgeRay" type="RayCast2D" parent="." unique_id=1754227966]
 position = Vector2(12, 0)
-target_position = Vector2(0, 36)
 collision_mask = 4
 
 [node name="DeathParticles" type="CPUParticles2D" parent="." unique_id=1277911243]

@@ -9,14 +9,15 @@
      "player/knight/idle/03.png"
     ],
     "frame_size": [
-     138,
-     228
+     237,
+     234
     ],
     "fps建议": 8,
     "fps": 8,
+    "y_shift": 3,
     "cell_offset": [
-     51,
-     6
+     1,
+     3
     ],
     "cell_size": [
      240,
@@ -33,13 +34,14 @@
      "player/knight/walk/05.png"
     ],
     "frame_size": [
-     136,
+     237,
      234
     ],
     "fps建议": 10,
     "fps": 10,
+    "y_shift": 0,
     "cell_offset": [
-     52,
+     1,
      3
     ],
     "cell_size": [
@@ -57,14 +59,15 @@
      "player/knight/run/05.png"
     ],
     "frame_size": [
-     198,
-     216
+     237,
+     234
     ],
     "fps建议": 12,
     "fps": 12,
+    "y_shift": 9,
     "cell_offset": [
-     21,
-     12
+     1,
+     3
     ],
     "cell_size": [
      240,
@@ -79,14 +82,15 @@
      "player/knight/attack1/03.png"
     ],
     "frame_size": [
-     234,
-     135
+     237,
+     234
     ],
     "fps建议": 12,
     "fps": 12,
+    "y_shift": 50,
     "cell_offset": [
-     3,
-     52
+     1,
+     3
     ],
     "cell_size": [
      240,
@@ -102,18 +106,43 @@
     ],
     "frame_size": [
      237,
-     138
+     234
     ],
     "fps建议": 12,
     "fps": 12,
+    "y_shift": 48,
     "cell_offset": [
      1,
-     51
+     3
     ],
     "cell_size": [
      240,
      240
     ]
+   },
+   "baseline": {
+    "canvas_size": [
+     237,
+     234
+    ],
+    "feet_y": 234,
+    "foot_offset_from_center_y": 117.0,
+    "feet_source": "walk union ink bottom (cell-relative 237)",
+    "canvas_origin_in_cell": [
+     1,
+     3
+    ],
+    "cell_size": [
+     240,
+     240
+    ],
+    "y_shift": {
+     "idle": 3,
+     "walk": 0,
+     "run": 9,
+     "attack1": 50,
+     "attack2": 48
+    }
    }
   }
  },
@@ -127,14 +156,15 @@
      "enemies/skeleton/idle/03.png"
     ],
     "frame_size": [
-     91,
+     166,
      165
     ],
     "fps建议": 8,
     "fps": 8,
+    "y_shift": -29,
     "cell_offset": [
-     39,
-     2
+     1,
+     -27
     ],
     "cell_size": [
      168,
@@ -152,13 +182,14 @@
     ],
     "frame_size": [
      166,
-     108
+     165
     ],
     "fps建议": 10,
     "fps": 10,
+    "y_shift": 0,
     "cell_offset": [
      1,
-     30
+     -27
     ],
     "cell_size": [
      168,
@@ -175,13 +206,14 @@
     ],
     "frame_size": [
      166,
-     106
+     165
     ],
     "fps建议": 12,
     "fps": 12,
+    "y_shift": 2,
     "cell_offset": [
      1,
-     30
+     -27
     ],
     "cell_size": [
      168,
@@ -194,14 +226,15 @@
      "enemies/skeleton/hurt/01.png"
     ],
     "frame_size": [
-     104,
+     166,
      165
     ],
     "fps建议": 10,
     "fps": 10,
+    "y_shift": -28,
     "cell_offset": [
-     31,
-     1
+     1,
+     -27
     ],
     "cell_size": [
      168,
@@ -214,19 +247,50 @@
      "enemies/skeleton/dead/01.png"
     ],
     "frame_size": [
-     160,
-     149
+     166,
+     165
     ],
     "fps建议": 6,
     "fps": 6,
+    "y_shift": [
+     -20,
+     32
+    ],
     "cell_offset": [
-     4,
-     9
+     1,
+     -27
     ],
     "cell_size": [
      168,
      168
     ]
+   },
+   "baseline": {
+    "canvas_size": [
+     166,
+     165
+    ],
+    "feet_y": 165,
+    "foot_offset_from_center_y": 82.5,
+    "feet_source": "walk union ink bottom (cell-relative 138)",
+    "canvas_origin_in_cell": [
+     1,
+     -27
+    ],
+    "cell_size": [
+     168,
+     168
+    ],
+    "y_shift": {
+     "idle": -29,
+     "walk": 0,
+     "attack": 2,
+     "hurt": -28,
+     "dead": [
+      -20,
+      32
+     ]
+    }
    }
   },
   "archer": {
@@ -238,14 +302,15 @@
      "enemies/archer/idle/03.png"
     ],
     "frame_size": [
-     114,
-     109
+     144,
+     113
     ],
     "fps建议": 8,
     "fps": 8,
+    "y_shift": 0,
     "cell_offset": [
-     18,
-     6
+     4,
+     2
     ],
     "cell_size": [
      152,
@@ -262,14 +327,15 @@
      "enemies/archer/walk/05.png"
     ],
     "frame_size": [
-     115,
-     111
+     144,
+     113
     ],
     "fps建议": 10,
     "fps": 10,
+    "y_shift": 0,
     "cell_offset": [
-     18,
-     4
+     4,
+     2
     ],
     "cell_size": [
      152,
@@ -285,14 +351,15 @@
      "enemies/archer/attack/04.png"
     ],
     "frame_size": [
-     139,
-     108
+     144,
+     113
     ],
     "fps建议": 12,
     "fps": 12,
+    "y_shift": 1,
     "cell_offset": [
-     6,
-     6
+     4,
+     2
     ],
     "cell_size": [
      152,
@@ -305,14 +372,15 @@
      "enemies/archer/hurt/01.png"
     ],
     "frame_size": [
-     134,
+     144,
      113
     ],
     "fps建议": 10,
     "fps": 10,
+    "y_shift": -1,
     "cell_offset": [
-     9,
-     3
+     4,
+     2
     ],
     "cell_size": [
      152,
@@ -326,18 +394,49 @@
     ],
     "frame_size": [
      144,
-     98
+     113
     ],
     "fps建议": 6,
     "fps": 6,
+    "y_shift": [
+     6,
+     33
+    ],
     "cell_offset": [
      4,
-     11
+     2
     ],
     "cell_size": [
      152,
      120
     ]
+   },
+   "baseline": {
+    "canvas_size": [
+     144,
+     113
+    ],
+    "feet_y": 113,
+    "foot_offset_from_center_y": 56.5,
+    "feet_source": "walk union ink bottom (cell-relative 115)",
+    "canvas_origin_in_cell": [
+     4,
+     2
+    ],
+    "cell_size": [
+     152,
+     120
+    ],
+    "y_shift": {
+     "idle": 0,
+     "walk": 0,
+     "attack": 1,
+     "hurt": -1,
+     "dead": [
+      6,
+      33
+     ]
+    }
    },
    "arrow": {
     "file": "enemies/archer/arrow.png",
@@ -1592,12 +1691,13 @@
    "tiles": "art/sheet_9_grid.png 560x384",
    "props/ui/backgrounds": "art/plague_town_grid.png 3760x1920"
   },
-  "frame_trim": "per-animation union trim: every frame of an animation shares frame_size and alignment; cell_offset is the crop's top-left inside the source cell, cell_size the source cell pitch (use them to re-align animations of one entity)",
+  "frame_trim": "entity-level canvas: all frames of one entity share frame_size and a fixed content offset (union of every frame's ink bbox, cell-relative), then each animation is shifted vertically so its feet line lands on the entity feet line (`baseline.feet_y`, taken from the walk animation). `y_shift` = px the animation was moved down (+ = content moved down); it is a per-frame list for `dead`, whose lying pose rests on the ground line. `cell_offset`/`cell_size` locate the canvas origin inside the source cell.",
   "notes": [
    "sheets are NOT uniform 5-row grids: characters are laid out row-major, 8 cells/row, frames grouped into animations by the declared frame counts",
    "knight attack1 = horizontal thrust, attack2 = slash (last 8 cells of row 3)",
    "archer arrow.png sits in the cell right after the attack frames",
-   "heart_empty.png absent from source art"
+   "heart_empty.png absent from source art",
+   "player/enemies entities carry a `baseline` entry next to the animation entries: skip keys whose value has no `frames`"
   ]
  }
 }

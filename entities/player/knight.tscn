@@ -43,7 +43,7 @@ script = ExtResource("1_dlu0u")
 scale = Vector2(0.5, 0.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=359571919]
-position = Vector2(0, 30)
+position = Vector2(0, 31.5)
 shape = SubResource("CapsuleShape2D_ry1ey")
 
 [node name="Components" type="Node2D" parent="." unique_id=26774715]
@@ -55,7 +55,7 @@ script = ExtResource("2_1ikvj")
 script = ExtResource("3_sookg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Components/HurtboxComponent" unique_id=1868769549]
-position = Vector2(0, 29)
+position = Vector2(0, 30.5)
 shape = SubResource("CapsuleShape2D_71w3d")
 
 [node name="AttackHitbox" type="Area2D" parent="." unique_id=1542400445]
