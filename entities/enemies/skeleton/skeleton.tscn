@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://cvae7gamih01l"]
+
+[ext_resource type="Script" uid="uid://bpvlnjitg3xs6" path="res://entities/enemies/skeleton/skeleton.gd" id="1_0usyd"]
+[ext_resource type="Script" uid="uid://b0hbu1om7usrx" path="res://entities/components/health_component.gd" id="2_ocggl"]
+[ext_resource type="Script" uid="uid://nijsmj1cyybq" path="res://entities/components/hurtbox_component.gd" id="3_udmr7"]
+[ext_resource type="Script" uid="uid://f86x08k60a21" path="res://entities/components/hitbox_component.gd" id="4_ja7qe"]
+[ext_resource type="Texture2D" uid="uid://bkywxiteexpao" path="res://assets/sprites/ui/coin.png" id="5_serdq"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pw5te"]
+radius = 7.0
+height = 44.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a01p3"]
+radius = 8.0
+height = 46.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mlpll"]
+size = Vector2(26, 12)
+
+[node name="Skeleton" type="CharacterBody2D" unique_id=1657754943]
+collision_layer = 2
+collision_mask = 4
+floor_block_on_wall = false
+script = ExtResource("1_0usyd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=874562706]
+scale = Vector2(0.5, 0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1070936876]
+position = Vector2(0, 4)
+shape = SubResource("CapsuleShape2D_pw5te")
+
+[node name="Components" type="Node2D" parent="." unique_id=1925232107]
+
+[node name="HealthComponent" type="Node" parent="Components" unique_id=1625442552]
+script = ExtResource("2_ocggl")
+max_health = 3
+
+[node name="HurtboxComponent" type="Area2D" parent="Components" unique_id=285928663]
+script = ExtResource("3_udmr7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Components/HurtboxComponent" unique_id=1111929326]
+position = Vector2(0, 3)
+shape = SubResource("CapsuleShape2D_a01p3")
+
+[node name="AttackHitbox" type="Area2D" parent="." unique_id=2102198812]
+script = ExtResource("4_ja7qe")
+target_group = &"player"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitbox" unique_id=1729506358]
+position = Vector2(22, 0)
+shape = SubResource("RectangleShape2D_mlpll")
+
+[node name="EdgeRay" type="RayCast2D" parent="." unique_id=1754227966]
+position = Vector2(12, 0)
+target_position = Vector2(0, 36)
+collision_mask = 4
+
+[node name="DeathParticles" type="CPUParticles2D" parent="." unique_id=1277911243]
+position = Vector2(0, 8)
+emitting = false
+amount = 12
+texture = ExtResource("5_serdq")
+lifetime = 0.35
+one_shot = true
+explosiveness = 0.8
+direction = Vector2(0, -1)
+gravity = Vector2(0, 200)
+initial_velocity_min = 40.0
+initial_velocity_max = 110.0
+scale_amount_min = 0.4
+scale_amount_max = 0.4

@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://i3s52uj10gv6"]
+
+[ext_resource type="Script" uid="uid://4q0xp16e0bnb" path="res://entities/enemies/archer/archer.gd" id="1_8kr4d"]
+[ext_resource type="Script" uid="uid://b0hbu1om7usrx" path="res://entities/components/health_component.gd" id="2_sxxrj"]
+[ext_resource type="Script" uid="uid://nijsmj1cyybq" path="res://entities/components/hurtbox_component.gd" id="3_8pyy1"]
+[ext_resource type="Texture2D" uid="uid://bkywxiteexpao" path="res://assets/sprites/ui/coin.png" id="4_cfjt4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x25ji"]
+radius = 7.0
+height = 44.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kf1ey"]
+radius = 8.0
+height = 46.0
+
+[node name="Archer" type="CharacterBody2D" unique_id=78339557]
+collision_layer = 2
+collision_mask = 4
+floor_block_on_wall = false
+script = ExtResource("1_8kr4d")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1307182997]
+scale = Vector2(0.5, 0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=634734856]
+position = Vector2(0, 5)
+shape = SubResource("CapsuleShape2D_x25ji")
+
+[node name="Components" type="Node2D" parent="." unique_id=1109697334]
+
+[node name="HealthComponent" type="Node" parent="Components" unique_id=1725440062]
+script = ExtResource("2_sxxrj")
+max_health = 2
+
+[node name="HurtboxComponent" type="Area2D" parent="Components" unique_id=2070699129]
+script = ExtResource("3_8pyy1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Components/HurtboxComponent" unique_id=1460416934]
+position = Vector2(0, 4)
+shape = SubResource("CapsuleShape2D_kf1ey")
+
+[node name="Muzzle" type="Marker2D" parent="." unique_id=1208409097]
+position = Vector2(26, -4)
+
+[node name="SightRay" type="RayCast2D" parent="." unique_id=631721968]
+target_position = Vector2(200, 0)
+collision_mask = 4
+
+[node name="DeathParticles" type="CPUParticles2D" parent="." unique_id=1485127184]
+position = Vector2(0, 4)
+emitting = false
+amount = 12
+texture = ExtResource("4_cfjt4")
+lifetime = 0.35
+one_shot = true
+explosiveness = 0.8
+direction = Vector2(0, -1)
+gravity = Vector2(0, 200)
+initial_velocity_min = 40.0
+initial_velocity_max = 110.0
+scale_amount_min = 0.4
+scale_amount_max = 0.4

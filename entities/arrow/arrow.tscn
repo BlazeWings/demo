@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dxwb5ygxi42bs"]
+
+[ext_resource type="Script" uid="uid://ygsmi3hpwusq" path="res://entities/arrow/arrow.gd" id="1_tlan0"]
+[ext_resource type="Texture2D" uid="uid://c4jn05sw8toel" path="res://assets/sprites/enemies/archer/arrow.png" id="2_hv62s"]
+[ext_resource type="Script" uid="uid://f86x08k60a21" path="res://entities/components/hitbox_component.gd" id="3_oteb5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nfrsj"]
+size = Vector2(43, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d0dgc"]
+size = Vector2(43, 6)
+
+[node name="Arrow" type="Area2D" unique_id=609210890]
+collision_layer = 64
+collision_mask = 4
+script = ExtResource("1_tlan0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=180834330]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_hv62s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=737249559]
+shape = SubResource("RectangleShape2D_nfrsj")
+
+[node name="HitboxComponent" type="Area2D" parent="." unique_id=1488585352]
+script = ExtResource("3_oteb5")
+target_group = &"player"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=16454892]
+shape = SubResource("RectangleShape2D_d0dgc")

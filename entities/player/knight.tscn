@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://4ixe3552340d"]
+
+[ext_resource type="Script" uid="uid://ytpcta2mlnol" path="res://entities/player/knight.gd" id="1_dlu0u"]
+[ext_resource type="Script" uid="uid://b0hbu1om7usrx" path="res://entities/components/health_component.gd" id="2_1ikvj"]
+[ext_resource type="Script" uid="uid://nijsmj1cyybq" path="res://entities/components/hurtbox_component.gd" id="3_sookg"]
+[ext_resource type="Script" uid="uid://f86x08k60a21" path="res://entities/components/hitbox_component.gd" id="4_qjc5v"]
+[ext_resource type="Script" uid="uid://38kpgklv4u5y" path="res://entities/player/state_machine.gd" id="5_4hvuk"]
+[ext_resource type="Script" uid="uid://dkc21ec6kknbl" path="res://entities/player/states/idle_state.gd" id="6_t6iw4"]
+[ext_resource type="Script" uid="uid://cmi55f4v1vlmw" path="res://entities/player/states/move_state.gd" id="7_mpnr3"]
+[ext_resource type="Script" uid="uid://f2mmmonl66jy" path="res://entities/player/states/jump_state.gd" id="8_l0b3l"]
+[ext_resource type="Script" uid="uid://c3begvf7yky26" path="res://entities/player/states/fall_state.gd" id="9_144qe"]
+[ext_resource type="Script" uid="uid://dw5bulwqg3h1o" path="res://entities/player/states/dash_state.gd" id="10_lcc33"]
+[ext_resource type="Script" uid="uid://svkwoedatf2x" path="res://entities/player/states/attack_state.gd" id="11_w1ixa"]
+[ext_resource type="Script" uid="uid://cj1wgqwuvao3x" path="res://entities/player/states/heal_state.gd" id="12_jymbu"]
+[ext_resource type="Script" uid="uid://db2n0ovdthaxo" path="res://entities/player/states/hurt_state.gd" id="13_aipoi"]
+[ext_resource type="Script" uid="uid://55i0vapnqrn3" path="res://entities/player/states/dead_state.gd" id="14_4q8bb"]
+[ext_resource type="Texture2D" uid="uid://b2pp0ppnap7ol" path="res://assets/sprites/player/knight/run/00.png" id="15_p4iis"]
+[ext_resource type="Texture2D" uid="uid://distvhou3jass" path="res://assets/sprites/ui/star.png" id="16_m2nr8"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ry1ey"]
+radius = 8.0
+height = 54.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_71w3d"]
+radius = 9.0
+height = 56.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_slmgo"]
+size = Vector2(30, 14)
+
+[sub_resource type="Gradient" id="Gradient_vnoac"]
+colors = PackedColorArray(0.7, 0.92, 1, 0.75, 0.4, 0.6, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_comh8"]
+colors = PackedColorArray(0.55, 1, 0.65, 0.95, 0.9, 1, 0.9, 0)
+
+[node name="Knight" type="CharacterBody2D" unique_id=1197973829]
+collision_mask = 4
+floor_block_on_wall = false
+script = ExtResource("1_dlu0u")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1583723243]
+scale = Vector2(0.5, 0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=359571919]
+position = Vector2(0, 30)
+shape = SubResource("CapsuleShape2D_ry1ey")
+
+[node name="Components" type="Node2D" parent="." unique_id=26774715]
+
+[node name="HealthComponent" type="Node" parent="Components" unique_id=781034668]
+script = ExtResource("2_1ikvj")
+
+[node name="HurtboxComponent" type="Area2D" parent="Components" unique_id=2052565766]
+script = ExtResource("3_sookg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Components/HurtboxComponent" unique_id=1868769549]
+position = Vector2(0, 29)
+shape = SubResource("CapsuleShape2D_71w3d")
+
+[node name="AttackHitbox" type="Area2D" parent="." unique_id=1542400445]
+script = ExtResource("4_qjc5v")
+target_group = &"enemy"
+target_mask = 96
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitbox" unique_id=1581627699]
+position = Vector2(26, 0)
+shape = SubResource("RectangleShape2D_slmgo")
+
+[node name="StateMachine" type="Node" parent="." unique_id=1281217703]
+script = ExtResource("5_4hvuk")
+
+[node name="Idle" type="Node" parent="StateMachine" unique_id=1417348327]
+script = ExtResource("6_t6iw4")
+
+[node name="Move" type="Node" parent="StateMachine" unique_id=265185428]
+script = ExtResource("7_mpnr3")
+
+[node name="Jump" type="Node" parent="StateMachine" unique_id=30845328]
+script = ExtResource("8_l0b3l")
+
+[node name="Fall" type="Node" parent="StateMachine" unique_id=787037766]
+script = ExtResource("9_144qe")
+
+[node name="Dash" type="Node" parent="StateMachine" unique_id=1250196959]
+script = ExtResource("10_lcc33")
+
+[node name="Attack" type="Node" parent="StateMachine" unique_id=737914178]
+script = ExtResource("11_w1ixa")
+
+[node name="Heal" type="Node" parent="StateMachine" unique_id=637665528]
+script = ExtResource("12_jymbu")
+
+[node name="Hurt" type="Node" parent="StateMachine" unique_id=1099968619]
+script = ExtResource("13_aipoi")
+
+[node name="Dead" type="Node" parent="StateMachine" unique_id=612645135]
+script = ExtResource("14_4q8bb")
+
+[node name="DashGhost" type="CPUParticles2D" parent="." unique_id=1894167061]
+emitting = false
+texture = ExtResource("15_p4iis")
+lifetime = 0.25
+spread = 0.0
+gravity = Vector2(0, 0)
+scale_amount_min = 0.5
+scale_amount_max = 0.5
+color = Color(0.55, 0.85, 1, 0.7)
+color_ramp = SubResource("Gradient_vnoac")
+
+[node name="HealParticles" type="CPUParticles2D" parent="." unique_id=631601151]
+emitting = false
+amount = 24
+texture = ExtResource("16_m2nr8")
+lifetime = 0.8
+emission_shape = 1
+emission_sphere_radius = 16.0
+direction = Vector2(0, -1)
+spread = 30.0
+gravity = Vector2(0, -40)
+initial_velocity_min = 20.0
+initial_velocity_max = 55.0
+scale_amount_min = 0.25
+scale_amount_max = 0.4
+color = Color(0.6, 1, 0.7, 0.9)
+color_ramp = SubResource("Gradient_comh8")
