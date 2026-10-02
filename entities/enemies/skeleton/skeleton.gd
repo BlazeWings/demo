@@ -43,11 +43,16 @@ const DEATH_FALLBACK_TIME: float = 1.5
 const ART_FACING: int = 1
 
 @export var initial_facing_right: bool = true
+## 以出生点为中心的巡逻半程（px）：PATROL 中超出这个范围就掉头回 home，
+## 避免骷髅一路巡逻到玩家出生点（出生点 c12/x=400 → 只在 304~496 之间来回）。
+@export var patrol_range: float = 96.0
 
 var _state: State = State.PATROL
 var _timer: float = 0.0
 var _facing: int = 1
 var _lunge_origin_x: float = 0.0
+## 出生点 x，巡逻以此为界。
+var _home_x: float = 0.0
 var _player: Node2D = null
 
 var _edge_base_x: float = 0.0
@@ -73,6 +78,7 @@ func _ready() -> void:
 	collision_layer = BODY_LAYER
 	collision_mask = TERRAIN_MASK
 	_facing = 1 if initial_facing_right else -1
+	_home_x = global_position.x
 
 	_build_sprites()
 	_setup_edge_ray()
@@ -278,6 +284,12 @@ func _tick_patrol() -> void:
 		_flip()
 	elif is_on_floor() and not _edge_ray_has_ground():
 		_flip()
+	elif _beyond_patrol_range() and signf(_home_x - global_position.x) != float(_facing):
+		_flip()
+
+
+func _beyond_patrol_range() -> bool:
+	return absf(global_position.x - _home_x) > patrol_range
 
 
 func _tick_windup() -> void:

@@ -163,6 +163,13 @@ func reset_dashes() -> void:
 	dashes_available = MAX_DASHES
 
 
+## 聚气回血前置条件：未满血 且 灵魂足够（契约 §4 Heal）。
+func can_heal() -> bool:
+	if health_component.get_health() >= health_component.max_health:
+		return false
+	return GameManager.soul >= SOUL_HEAL_COST
+
+
 func do_jump() -> void:
 	velocity.y = JUMP_VELOCITY
 	jump_buffer_timer = 0.0
@@ -234,6 +241,7 @@ func _on_attack_hit_landed() -> void:
 	GameManager.add_soul(SOUL_PER_HIT)
 	if current_attack_direction == AttackDirection.DOWN and not is_on_floor():
 		velocity.y = POGO_VELOCITY
+		reset_dashes()
 
 
 # --- 冲刺 ---
@@ -279,7 +287,8 @@ func finish_heal() -> void:
 func on_hazard() -> void:
 	if _is_dead:
 		return
-	health_component.take_damage(1, global_position + Vector2(0.0, 16.0))
+	if hurtbox == null or not hurtbox.is_invulnerable():
+		health_component.take_damage(1, global_position + Vector2(0.0, 16.0))
 	global_position = GameManager.get_respawn()
 	velocity = Vector2.ZERO
 	_start_invulnerability()

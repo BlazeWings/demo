@@ -20,6 +20,11 @@ func _ready() -> void:
 		push_warning("HurtboxComponent on %s has no HealthComponent wired." % owner)
 
 
+## 无敌中（受击后 1s / 危险区保护期）。纯增量查询，供 on_hazard 等判断。
+func is_invulnerable() -> bool:
+	return _invulnerable
+
+
 func receive_hit(hitbox: HitboxComponent) -> void:
 	if _invulnerable or hitbox == null or health_component == null:
 		return

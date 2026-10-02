@@ -19,7 +19,7 @@ func physics_update(delta: float) -> String:
 func check_transitions() -> String:
 	if player.attack_requested:
 		return PlayerStateMachine.ATTACK
-	if player.heal_requested:
+	if player.heal_requested and player.can_heal():
 		return PlayerStateMachine.HEAL
 	if player.dash_requested and player.can_dash():
 		return PlayerStateMachine.DASH
