@@ -13,6 +13,7 @@ monitoring = false
 script = ExtResource("1_513gb")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1756190611]
+z_index = -1
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_11ebm")
 

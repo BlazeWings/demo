@@ -15,10 +15,10 @@ extends Node2D
 ##   A  archer             (entities/enemies/archer/archer.tscn)
 ##   .  empty
 ##
-## World size: 56 columns x 12 rows x 32 px = 1792 x 384 px.
+## World size: 56 columns x 18 rows x 32 px = 1792 x 576 px.
 
 const CELL_SIZE: int = 32
-const MAP_ROWS: int = 12
+const MAP_ROWS: int = 18
 const MAP_COLUMNS: int = 56
 const TERRAIN_SCALE: float = 2.0
 ## Visual/collision thickness of a one-way platform cell (platform_red_wide is 38x8 -> 76x16).
@@ -53,11 +53,17 @@ const MARKER_NAMES: Dictionary = {
 	"C": "Checkpoint",
 }
 
-## 56 columns x 12 rows. Row 0 is the top of the map, row 11 the bottom.
-## Floor surface = top of row 8 (y = 256). Spike pit cols 16-19 (2 cells deep, escapable).
-## Gash cols 32-35 (128 px wide, bottomless -> KillZone). Upper ledge = row 4 (y = 128),
-## reached from the one-way platform at row 6 cols 40-43 (64 px steps, jump height is ~82 px).
+## 56 columns x 18 rows. Row 0-8 are sky, row 17 the bottom.
+## Floor surface = top of row 14 (y = 448). Spike pit cols 16-19 (2 cells deep, escapable).
+## Gash cols 32-35 (128 px wide, bottomless -> KillZone). Upper ledge = row 10 (y = 320),
+## reached from the one-way platform at row 12 cols 40-43 (64 px steps, jump height ~94 px).
 const MAP: Array[String] = [
+	"#......................................................#",
+	"#......................................................#",
+	"#......................................................#",
+	"#......................................................#",
+	"#......................................................#",
+	"#......................................................#",
 	"#......................................................#",
 	"#......................................................#",
 	"#......................................................#",

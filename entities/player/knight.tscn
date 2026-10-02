@@ -26,7 +26,7 @@ radius = 9.0
 height = 56.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_slmgo"]
-size = Vector2(30, 32)
+size = Vector2(40, 38)
 
 [sub_resource type="Gradient" id="Gradient_vnoac"]
 colors = PackedColorArray(0.7, 0.92, 1, 0.75, 0.4, 0.6, 1, 0)
@@ -64,7 +64,7 @@ target_group = &"enemy"
 target_mask = 96
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitbox" unique_id=1581627699]
-position = Vector2(26, 8)
+position = Vector2(30, 2)
 shape = SubResource("RectangleShape2D_slmgo")
 
 [node name="StateMachine" type="Node" parent="." unique_id=1281217703]

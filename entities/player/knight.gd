@@ -6,16 +6,16 @@ extends CharacterBody2D
 
 enum AttackDirection { HORIZONTAL, UP, DOWN }
 
-const SPEED: float = 150.0
-const ACCEL: float = 1400.0
-const DECEL: float = 1000.0
-const JUMP_VELOCITY: float = -400.0
+const SPEED: float = 170.0
+const ACCEL: float = 1600.0
+const DECEL: float = 1100.0
+const JUMP_VELOCITY: float = -430.0
 const JUMP_CUT_MULT: float = 0.45
 const FALL_GRAVITY_MULT: float = 1.4
 const MAX_FALL_SPEED: float = 520.0
-const COYOTE_TIME: float = 0.12
+const COYOTE_TIME: float = 0.15
 const JUMP_BUFFER_TIME: float = 0.12
-const DASH_SPEED: float = 420.0
+const DASH_SPEED: float = 460.0
 const DASH_DURATION: float = 0.15
 const MAX_DASHES: int = 1
 const DASH_ANIM_SPEED_SCALE: float = 2.0
@@ -68,7 +68,11 @@ var current_attack_direction: int = AttackDirection.HORIZONTAL
 
 var _sprite_base_scale := Vector2.ONE
 var _sprite_base_position := Vector2.ZERO
+## 脚底到原点的偏移（父坐标系像素）：落地挤压锚点 & 上挑/下劈的旋转轴心都用它。
 var _squash_anchor_y: float = 0.0
+var _squash_offset := Vector2.ZERO
+## 上挑/下劈时为保证"脚底不动"而给 sprite 中心加的补偿位移。
+var _attack_pivot_offset := Vector2.ZERO
 var _attack_hitbox_base_offset := Vector2.ZERO
 var _squash_tween: Tween
 var _death_tween: Tween
@@ -198,13 +202,13 @@ func begin_attack(direction: int) -> void:
 	_place_attack_hitbox(direction)
 	match direction:
 		AttackDirection.UP:
-			sprite.rotation = -PI * 0.5
+			_set_attack_rotation(-PI * 0.5)
 			play_anim(&"attack2")
 		AttackDirection.DOWN:
-			sprite.rotation = PI * 0.5
+			_set_attack_rotation(PI * 0.5)
 			play_anim(&"attack2")
 		_:
-			sprite.rotation = 0.0
+			_set_attack_rotation(0.0)
 			play_anim(&"attack1")
 	attack_hitbox.set_active(true)
 
@@ -216,7 +220,7 @@ func deactivate_attack_hitbox() -> void:
 func end_attack() -> void:
 	deactivate_attack_hitbox()
 	current_attack_direction = AttackDirection.HORIZONTAL
-	sprite.rotation = 0.0
+	_set_attack_rotation(0.0)
 	_place_attack_hitbox(AttackDirection.HORIZONTAL)
 
 
@@ -340,7 +344,7 @@ func respawn() -> void:
 	if hurtbox != null:
 		hurtbox.set_deferred("monitorable", true)
 	_kill_tween(_death_tween)
-	sprite.rotation = 0.0
+	_set_attack_rotation(0.0)
 	sprite.modulate = Color.WHITE
 	sprite.speed_scale = 1.0
 	reset_squash()
@@ -384,7 +388,30 @@ func set_squash(x_scale: float, y_scale: float) -> void:
 	if sprite == null:
 		return
 	sprite.scale = Vector2(_sprite_base_scale.x * x_scale, _sprite_base_scale.y * y_scale)
-	sprite.position = _sprite_base_position + Vector2(0.0, _squash_anchor_y * (1.0 - y_scale))
+	_squash_offset = Vector2(0.0, _squash_anchor_y * (1.0 - y_scale))
+	_refresh_sprite_position()
+
+
+## sprite.position 的唯一写入口：基准位 + 挤压偏移 + 攻击轴心偏移。
+func _refresh_sprite_position() -> void:
+	if sprite == null:
+		return
+	sprite.position = _sprite_base_position + _squash_offset + _attack_pivot_offset
+
+
+## 上挑/下劈绕"脚底点"旋转，而不是绕 sprite 中心（绕中心会把身体甩出去，视觉悬空/穿地）。
+## 脚底在父坐标系是 f=(0, _squash_anchor_y)；要让脚底旋转后不动，中心需 c = f - R(θ)·f。
+## 脚底 x=0，所以 flip_h 的镜像不影响该补偿。
+func _set_attack_rotation(angle: float) -> void:
+	if sprite == null:
+		return
+	sprite.rotation = angle
+	if is_zero_approx(angle):
+		_attack_pivot_offset = Vector2.ZERO
+	else:
+		var foot := Vector2(0.0, _squash_anchor_y)
+		_attack_pivot_offset = foot - foot.rotated(angle)
+	_refresh_sprite_position()
 
 
 func reset_squash() -> void:
@@ -398,7 +425,7 @@ func play_land_squash() -> void:
 	_kill_tween(_squash_tween)
 	set_squash(1.22, 0.78)
 	_squash_tween = create_tween()
-	_squash_tween.tween_method(_squash_lerp, 1.0, 0.0, 0.12)
+	_squash_tween.tween_method(_squash_lerp, 0.0, 1.0, 0.12)
 
 
 func _squash_lerp(t: float) -> void:

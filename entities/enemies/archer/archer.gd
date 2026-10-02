@@ -36,6 +36,8 @@ const KNOCKBACK_SPEED: float = 150.0
 const KNOCKBACK_FRICTION: float = 400.0
 
 const DEATH_FALLBACK_TIME: float = 1.5
+## 边缘探针深度：必须够到脚底（28.25）以下，才算"前方有地面"。
+const EDGE_PROBE_DEPTH: float = 50.0
 
 ## 1 = 素材默认朝右（flip_h=false 即朝右）；若素材实际朝左，改成 -1 即可。
 ## $Muzzle 按“朝右”摆放，翻转时脚本会镜像它的 x。
@@ -287,8 +289,28 @@ func _tick_shoot() -> void:
 
 func _tick_hurt(delta: float) -> void:
 	velocity.x = move_toward(velocity.x, 0.0, KNOCKBACK_FRICTION * delta)
+	_hold_at_ledge(velocity.x)
 	if _timer <= 0.0:
 		_enter_idle()
+
+
+## 平台边缘保护（同骷髅）：受击被击退到边缘时不再往外冲。
+func _hold_at_ledge(horizontal_speed: float) -> void:
+	if not is_on_floor() or absf(horizontal_speed) < 1.0:
+		return
+	var dir := 1 if horizontal_speed > 0.0 else -1
+	if not _ground_ahead(dir):
+		velocity.x = 0.0
+
+
+## 指定方向前方脚下 EDGE_PROBE_DEPTH 内是否有地形。
+func _ground_ahead(dir: int) -> bool:
+	if not is_inside_tree():
+		return true
+	var from := global_position + Vector2(float(dir) * 12.0, 0.0)
+	var query := PhysicsRayQueryParameters2D.create(from, from + Vector2(0.0, EDGE_PROBE_DEPTH), TERRAIN_MASK)
+	query.exclude = [get_rid()]
+	return not get_world_2d().direct_space_state.intersect_ray(query).is_empty()
 
 
 # --- 感知与射击 ---

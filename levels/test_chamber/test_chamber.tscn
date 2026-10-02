@@ -15,11 +15,11 @@ layer = -1
 
 [node name="FarLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1387716756]
 motion_scale = Vector2(0.3, 0.3)
-motion_mirroring = Vector2(746, 0)
+motion_mirroring = Vector2(932.5, 0)
 
 [node name="Night1" type="Sprite2D" parent="ParallaxBackground/FarLayer" unique_id=608912384]
-position = Vector2(0, 190)
-scale = Vector2(2, 2)
+position = Vector2(0, 245)
+scale = Vector2(2.5, 2.5)
 texture = ExtResource("2_ohd2f")
 
 [node name="NearLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1584208581]
@@ -27,7 +27,7 @@ motion_scale = Vector2(0.6, 0.6)
 motion_mirroring = Vector2(746, 0)
 
 [node name="Night2" type="Sprite2D" parent="ParallaxBackground/NearLayer" unique_id=1292484458]
-position = Vector2(0, 143)
+position = Vector2(0, 335)
 scale = Vector2(2, 2)
 texture = ExtResource("3_2wrgw")
 
