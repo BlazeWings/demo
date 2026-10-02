@@ -1,0 +1,1603 @@
+{
+ "player": {
+  "knight": {
+   "idle": {
+    "frames": [
+     "player/knight/idle/00.png",
+     "player/knight/idle/01.png",
+     "player/knight/idle/02.png",
+     "player/knight/idle/03.png"
+    ],
+    "frame_size": [
+     138,
+     228
+    ],
+    "fps建议": 8,
+    "fps": 8,
+    "cell_offset": [
+     51,
+     6
+    ],
+    "cell_size": [
+     240,
+     240
+    ]
+   },
+   "walk": {
+    "frames": [
+     "player/knight/walk/00.png",
+     "player/knight/walk/01.png",
+     "player/knight/walk/02.png",
+     "player/knight/walk/03.png",
+     "player/knight/walk/04.png",
+     "player/knight/walk/05.png"
+    ],
+    "frame_size": [
+     136,
+     234
+    ],
+    "fps建议": 10,
+    "fps": 10,
+    "cell_offset": [
+     52,
+     3
+    ],
+    "cell_size": [
+     240,
+     240
+    ]
+   },
+   "run": {
+    "frames": [
+     "player/knight/run/00.png",
+     "player/knight/run/01.png",
+     "player/knight/run/02.png",
+     "player/knight/run/03.png",
+     "player/knight/run/04.png",
+     "player/knight/run/05.png"
+    ],
+    "frame_size": [
+     198,
+     216
+    ],
+    "fps建议": 12,
+    "fps": 12,
+    "cell_offset": [
+     21,
+     12
+    ],
+    "cell_size": [
+     240,
+     240
+    ]
+   },
+   "attack1": {
+    "frames": [
+     "player/knight/attack1/00.png",
+     "player/knight/attack1/01.png",
+     "player/knight/attack1/02.png",
+     "player/knight/attack1/03.png"
+    ],
+    "frame_size": [
+     234,
+     135
+    ],
+    "fps建议": 12,
+    "fps": 12,
+    "cell_offset": [
+     3,
+     52
+    ],
+    "cell_size": [
+     240,
+     240
+    ]
+   },
+   "attack2": {
+    "frames": [
+     "player/knight/attack2/00.png",
+     "player/knight/attack2/01.png",
+     "player/knight/attack2/02.png",
+     "player/knight/attack2/03.png"
+    ],
+    "frame_size": [
+     237,
+     138
+    ],
+    "fps建议": 12,
+    "fps": 12,
+    "cell_offset": [
+     1,
+     51
+    ],
+    "cell_size": [
+     240,
+     240
+    ]
+   }
+  }
+ },
+ "enemies": {
+  "skeleton": {
+   "idle": {
+    "frames": [
+     "enemies/skeleton/idle/00.png",
+     "enemies/skeleton/idle/01.png",
+     "enemies/skeleton/idle/02.png",
+     "enemies/skeleton/idle/03.png"
+    ],
+    "frame_size": [
+     91,
+     165
+    ],
+    "fps建议": 8,
+    "fps": 8,
+    "cell_offset": [
+     39,
+     2
+    ],
+    "cell_size": [
+     168,
+     168
+    ]
+   },
+   "walk": {
+    "frames": [
+     "enemies/skeleton/walk/00.png",
+     "enemies/skeleton/walk/01.png",
+     "enemies/skeleton/walk/02.png",
+     "enemies/skeleton/walk/03.png",
+     "enemies/skeleton/walk/04.png",
+     "enemies/skeleton/walk/05.png"
+    ],
+    "frame_size": [
+     166,
+     108
+    ],
+    "fps建议": 10,
+    "fps": 10,
+    "cell_offset": [
+     1,
+     30
+    ],
+    "cell_size": [
+     168,
+     168
+    ]
+   },
+   "attack": {
+    "frames": [
+     "enemies/skeleton/attack/00.png",
+     "enemies/skeleton/attack/01.png",
+     "enemies/skeleton/attack/02.png",
+     "enemies/skeleton/attack/03.png",
+     "enemies/skeleton/attack/04.png"
+    ],
+    "frame_size": [
+     166,
+     106
+    ],
+    "fps建议": 12,
+    "fps": 12,
+    "cell_offset": [
+     1,
+     30
+    ],
+    "cell_size": [
+     168,
+     168
+    ]
+   },
+   "hurt": {
+    "frames": [
+     "enemies/skeleton/hurt/00.png",
+     "enemies/skeleton/hurt/01.png"
+    ],
+    "frame_size": [
+     104,
+     165
+    ],
+    "fps建议": 10,
+    "fps": 10,
+    "cell_offset": [
+     31,
+     1
+    ],
+    "cell_size": [
+     168,
+     168
+    ]
+   },
+   "dead": {
+    "frames": [
+     "enemies/skeleton/dead/00.png",
+     "enemies/skeleton/dead/01.png"
+    ],
+    "frame_size": [
+     160,
+     149
+    ],
+    "fps建议": 6,
+    "fps": 6,
+    "cell_offset": [
+     4,
+     9
+    ],
+    "cell_size": [
+     168,
+     168
+    ]
+   }
+  },
+  "archer": {
+   "idle": {
+    "frames": [
+     "enemies/archer/idle/00.png",
+     "enemies/archer/idle/01.png",
+     "enemies/archer/idle/02.png",
+     "enemies/archer/idle/03.png"
+    ],
+    "frame_size": [
+     114,
+     109
+    ],
+    "fps建议": 8,
+    "fps": 8,
+    "cell_offset": [
+     18,
+     6
+    ],
+    "cell_size": [
+     152,
+     120
+    ]
+   },
+   "walk": {
+    "frames": [
+     "enemies/archer/walk/00.png",
+     "enemies/archer/walk/01.png",
+     "enemies/archer/walk/02.png",
+     "enemies/archer/walk/03.png",
+     "enemies/archer/walk/04.png",
+     "enemies/archer/walk/05.png"
+    ],
+    "frame_size": [
+     115,
+     111
+    ],
+    "fps建议": 10,
+    "fps": 10,
+    "cell_offset": [
+     18,
+     4
+    ],
+    "cell_size": [
+     152,
+     120
+    ]
+   },
+   "attack": {
+    "frames": [
+     "enemies/archer/attack/00.png",
+     "enemies/archer/attack/01.png",
+     "enemies/archer/attack/02.png",
+     "enemies/archer/attack/03.png",
+     "enemies/archer/attack/04.png"
+    ],
+    "frame_size": [
+     139,
+     108
+    ],
+    "fps建议": 12,
+    "fps": 12,
+    "cell_offset": [
+     6,
+     6
+    ],
+    "cell_size": [
+     152,
+     120
+    ]
+   },
+   "hurt": {
+    "frames": [
+     "enemies/archer/hurt/00.png",
+     "enemies/archer/hurt/01.png"
+    ],
+    "frame_size": [
+     134,
+     113
+    ],
+    "fps建议": 10,
+    "fps": 10,
+    "cell_offset": [
+     9,
+     3
+    ],
+    "cell_size": [
+     152,
+     120
+    ]
+   },
+   "dead": {
+    "frames": [
+     "enemies/archer/dead/00.png",
+     "enemies/archer/dead/01.png"
+    ],
+    "frame_size": [
+     144,
+     98
+    ],
+    "fps建议": 6,
+    "fps": 6,
+    "cell_offset": [
+     4,
+     11
+    ],
+    "cell_size": [
+     152,
+     120
+    ]
+   },
+   "arrow": {
+    "file": "enemies/archer/arrow.png",
+    "frame_size": [
+     86,
+     13
+    ],
+    "source_bbox": [
+     1097,
+     173,
+     1183,
+     186
+    ]
+   }
+  }
+ },
+ "tiles": {
+  "tree_dead": {
+   "file": "tiles/tree_dead.png",
+   "size": [
+    106,
+    128
+   ],
+   "source_union": [
+    2,
+    0,
+    110,
+    129
+   ]
+  },
+  "sign_01": {
+   "file": "tiles/sign_01.png",
+   "size": [
+    13,
+    14
+   ],
+   "source_rect": [
+    268,
+    52,
+    292,
+    76
+   ]
+  },
+  "sign_02": {
+   "file": "tiles/sign_02.png",
+   "size": [
+    14,
+    12
+   ],
+   "source_rect": [
+    380,
+    53,
+    404,
+    75
+   ]
+  },
+  "sign_03": {
+   "file": "tiles/sign_03.png",
+   "size": [
+    13,
+    14
+   ],
+   "source_rect": [
+    44,
+    180,
+    68,
+    204
+   ]
+  },
+  "sign_04": {
+   "file": "tiles/sign_04.png",
+   "size": [
+    13,
+    12
+   ],
+   "source_rect": [
+    156,
+    181,
+    180,
+    203
+   ]
+  },
+  "sign_05": {
+   "file": "tiles/sign_05.png",
+   "size": [
+    13,
+    14
+   ],
+   "source_rect": [
+    268,
+    180,
+    292,
+    204
+   ]
+  },
+  "sign_06": {
+   "file": "tiles/sign_06.png",
+   "size": [
+    13,
+    14
+   ],
+   "source_rect": [
+    380,
+    180,
+    404,
+    204
+   ]
+  },
+  "block_red": {
+   "file": "tiles/block_red.png",
+   "size": [
+    14,
+    11
+   ],
+   "source_rect": [
+    492,
+    181,
+    516,
+    202
+   ]
+  },
+  "block_dark_red": {
+   "file": "tiles/block_dark_red.png",
+   "size": [
+    14,
+    13
+   ],
+   "source_rect": [
+    156,
+    308,
+    180,
+    331
+   ]
+  },
+  "block_orange": {
+   "file": "tiles/block_orange.png",
+   "size": [
+    14,
+    13
+   ],
+   "source_rect": [
+    268,
+    308,
+    296,
+    331
+   ]
+  },
+  "platform_red_wide": {
+   "file": "tiles/platform_red_wide.png",
+   "size": [
+    38,
+    8
+   ],
+   "source_rect": [
+    480,
+    55,
+    528,
+    73
+   ]
+  },
+  "railing_dark_red": {
+   "file": "tiles/railing_dark_red.png",
+   "size": [
+    38,
+    8
+   ],
+   "source_rect": [
+    32,
+    311,
+    80,
+    329
+   ]
+  },
+  "rock_small": {
+   "file": "tiles/rock_small.png",
+   "size": [
+    11,
+    8
+   ],
+   "source_rect": [
+    381,
+    311,
+    402,
+    329
+   ]
+  },
+  "rock": {
+   "file": "tiles/rock.png",
+   "size": [
+    13,
+    9
+   ],
+   "source_rect": [
+    492,
+    310,
+    515,
+    329
+   ]
+  },
+  "platform_brick_red": {
+   "file": "tiles/platform_brick_red.png",
+   "size": [
+    55,
+    10
+   ],
+   "source_rect": [
+    107,
+    3,
+    162,
+    18
+   ]
+  },
+  "platform_brick_green": {
+   "file": "tiles/platform_brick_green.png",
+   "size": [
+    35,
+    17
+   ],
+   "source_rect": [
+    126,
+    54,
+    161,
+    71
+   ]
+  },
+  "platform_brick_blue": {
+   "file": "tiles/platform_brick_blue.png",
+   "size": [
+    48,
+    14
+   ],
+   "source_rect": [
+    107,
+    40,
+    160,
+    54
+   ]
+  },
+  "ladder": {
+   "file": "tiles/ladder.png",
+   "size": [
+    14,
+    52
+   ],
+   "source_rect": [
+    112,
+    68,
+    126,
+    125
+   ]
+  },
+  "terrain_purple": {
+   "file": "tiles/terrain_purple.png",
+   "size": [
+    29,
+    20
+   ],
+   "source_rect": [
+    146,
+    100,
+    175,
+    122
+   ]
+  },
+  "platform_moss": {
+   "file": "tiles/platform_moss.png",
+   "size": [
+    44,
+    49
+   ],
+   "source_rect": [
+    172,
+    71,
+    216,
+    123
+   ]
+  },
+  "water": {
+   "file": "tiles/water.png",
+   "size": [
+    17,
+    14
+   ],
+   "source_rect": [
+    127,
+    87,
+    145,
+    101
+   ]
+  },
+  "door_red": {
+   "file": "tiles/door_red.png",
+   "size": [
+    15,
+    16
+   ],
+   "source_rect": [
+    127,
+    72,
+    145,
+    88
+   ]
+  },
+  "terrain_grass": {
+   "file": "tiles/terrain_grass.png",
+   "size": [
+    79,
+    78
+   ],
+   "source_rect": [
+    2776,
+    77,
+    2863,
+    163
+   ]
+  },
+  "terrain_stone": {
+   "file": "tiles/terrain_stone.png",
+   "size": [
+    79,
+    80
+   ],
+   "source_rect": [
+    3528,
+    76,
+    3615,
+    164
+   ]
+  },
+  "terrain_cobble": {
+   "file": "tiles/terrain_cobble.png",
+   "size": [
+    75,
+    76
+   ],
+   "source_rect": [
+    2403,
+    78,
+    2486,
+    162
+   ]
+  },
+  "terrain_brick": {
+   "file": "tiles/terrain_brick.png",
+   "size": [
+    74,
+    76
+   ],
+   "source_rect": [
+    1651,
+    317,
+    1733,
+    401
+   ]
+  },
+  "block_question": {
+   "file": "tiles/block_question.png",
+   "size": [
+    74,
+    76
+   ],
+   "source_rect": [
+    3155,
+    78,
+    3237,
+    162
+   ]
+  },
+  "plank_panel": {
+   "file": "tiles/plank_panel.png",
+   "size": [
+    76,
+    77
+   ],
+   "source_rect": [
+    2026,
+    78,
+    2110,
+    163
+   ]
+  },
+  "ladder_wood": {
+   "file": "tiles/ladder_wood.png",
+   "size": [
+    68,
+    64
+   ],
+   "source_rect": [
+    2030,
+    324,
+    2106,
+    396
+   ]
+  },
+  "ladder_wood_short": {
+   "file": "tiles/ladder_wood_short.png",
+   "size": [
+    76,
+    72
+   ],
+   "source_rect": [
+    2402,
+    799,
+    2486,
+    879
+   ]
+  }
+ },
+ "props": {
+  "house": {
+   "file": "props/house.png",
+   "size": [
+    306,
+    233
+   ],
+   "source_rect": [
+    30,
+    0,
+    344,
+    240
+   ]
+  },
+  "barrel": {
+   "file": "props/barrel.png",
+   "size": [
+    72,
+    76
+   ],
+   "source_rect": [
+    524,
+    77,
+    604,
+    161
+   ]
+  },
+  "roof_slope_01": {
+   "file": "props/roof_slope_01.png",
+   "size": [
+    81,
+    80
+   ],
+   "source_rect": [
+    895,
+    76,
+    984,
+    164
+   ]
+  },
+  "roof_slope_02": {
+   "file": "props/roof_slope_02.png",
+   "size": [
+    80,
+    79
+   ],
+   "source_rect": [
+    1647,
+    76,
+    1735,
+    163
+   ]
+  },
+  "ground_dark_01": {
+   "file": "props/ground_dark_01.png",
+   "size": [
+    81,
+    81
+   ],
+   "source_rect": [
+    1271,
+    75,
+    1360,
+    164
+   ]
+  },
+  "ground_dark_02": {
+   "file": "props/ground_dark_02.png",
+   "size": [
+    74,
+    76
+   ],
+   "source_rect": [
+    1651,
+    317,
+    1733,
+    401
+   ]
+  },
+  "ground_dark_03": {
+   "file": "props/ground_dark_03.png",
+   "size": [
+    79,
+    76
+   ],
+   "source_rect": [
+    3529,
+    317,
+    3616,
+    401
+   ]
+  },
+  "ground_dark_04": {
+   "file": "props/ground_dark_04.png",
+   "size": [
+    82,
+    81
+   ],
+   "source_rect": [
+    143,
+    555,
+    233,
+    644
+   ]
+  },
+  "fill_dark_01": {
+   "file": "props/fill_dark_01.png",
+   "size": [
+    80,
+    81
+   ],
+   "source_rect": [
+    145,
+    315,
+    232,
+    404
+   ]
+  },
+  "fill_dark_02": {
+   "file": "props/fill_dark_02.png",
+   "size": [
+    80,
+    80
+   ],
+   "source_rect": [
+    520,
+    316,
+    608,
+    404
+   ]
+  },
+  "rock_dark_01": {
+   "file": "props/rock_dark_01.png",
+   "size": [
+    81,
+    80
+   ],
+   "source_rect": [
+    895,
+    316,
+    984,
+    404
+   ]
+  },
+  "rock_dark_02": {
+   "file": "props/rock_dark_02.png",
+   "size": [
+    61,
+    81
+   ],
+   "source_rect": [
+    3161,
+    315,
+    3230,
+    404
+   ]
+  },
+  "rock_dark_03": {
+   "file": "props/rock_dark_03.png",
+   "size": [
+    61,
+    81
+   ],
+   "source_rect": [
+    906,
+    555,
+    975,
+    644
+   ]
+  },
+  "rock_dark_04": {
+   "file": "props/rock_dark_04.png",
+   "size": [
+    71,
+    188
+   ],
+   "source_rect": [
+    2404,
+    1221,
+    2483,
+    1417
+   ]
+  },
+  "rock_dark_05": {
+   "file": "props/rock_dark_05.png",
+   "size": [
+    74,
+    188
+   ],
+   "source_rect": [
+    2779,
+    1221,
+    2861,
+    1417
+   ]
+  },
+  "cave_formation_01": {
+   "file": "props/cave_formation_01.png",
+   "size": [
+    197,
+    200
+   ],
+   "source_rect": [
+    2717,
+    736,
+    2922,
+    944
+   ]
+  },
+  "cave_formation_02": {
+   "file": "props/cave_formation_02.png",
+   "size": [
+    188,
+    196
+   ],
+   "source_rect": [
+    3098,
+    738,
+    3294,
+    942
+   ]
+  },
+  "cave_formation_03": {
+   "file": "props/cave_formation_03.png",
+   "size": [
+    190,
+    189
+   ],
+   "source_rect": [
+    3473,
+    742,
+    3671,
+    939
+   ]
+  },
+  "cave_formation_04": {
+   "file": "props/cave_formation_04.png",
+   "size": [
+    190,
+    189
+   ],
+   "source_rect": [
+    1968,
+    1221,
+    2166,
+    1418
+   ]
+  },
+  "cave_formation_05": {
+   "file": "props/cave_formation_05.png",
+   "size": [
+    200,
+    188
+   ],
+   "source_rect": [
+    3092,
+    1221,
+    3300,
+    1418
+   ]
+  },
+  "rock_01": {
+   "file": "props/rock_01.png",
+   "size": [
+    67,
+    49
+   ],
+   "source_rect": [
+    2031,
+    571,
+    2106,
+    628
+   ]
+  },
+  "rock_02": {
+   "file": "props/rock_02.png",
+   "size": [
+    62,
+    33
+   ],
+   "source_rect": [
+    2409,
+    579,
+    2479,
+    620
+   ]
+  },
+  "rock_03": {
+   "file": "props/rock_03.png",
+   "size": [
+    64,
+    30
+   ],
+   "source_rect": [
+    2784,
+    581,
+    2856,
+    619
+   ]
+  },
+  "rock_04": {
+   "file": "props/rock_04.png",
+   "size": [
+    62,
+    32
+   ],
+   "source_rect": [
+    3161,
+    580,
+    3231,
+    620
+   ]
+  },
+  "rock_05": {
+   "file": "props/rock_05.png",
+   "size": [
+    30,
+    26
+   ],
+   "source_rect": [
+    3553,
+    583,
+    3591,
+    617
+   ]
+  },
+  "rock_06": {
+   "file": "props/rock_06.png",
+   "size": [
+    28,
+    29
+   ],
+   "source_rect": [
+    170,
+    821,
+    206,
+    858
+   ]
+  },
+  "rock_07": {
+   "file": "props/rock_07.png",
+   "size": [
+    36,
+    26
+   ],
+   "source_rect": [
+    542,
+    823,
+    586,
+    857
+   ]
+  },
+  "rock_08": {
+   "file": "props/rock_08.png",
+   "size": [
+    34,
+    29
+   ],
+   "source_rect": [
+    919,
+    821,
+    961,
+    858
+   ]
+  },
+  "lamp": {
+   "file": "props/lamp.png",
+   "size": [
+    53,
+    77
+   ],
+   "source_rect": [
+    1285,
+    797,
+    1346,
+    882
+   ]
+  },
+  "tombstone": {
+   "file": "props/tombstone.png",
+   "size": [
+    57,
+    71
+   ],
+   "source_rect": [
+    1659,
+    800,
+    1724,
+    879
+   ]
+  },
+  "spikes": {
+   "file": "props/spikes.png",
+   "size": [
+    78,
+    70
+   ],
+   "source_rect": [
+    2025,
+    801,
+    2111,
+    879
+   ]
+  },
+  "sign_biohazard": {
+   "file": "props/sign_biohazard.png",
+   "size": [
+    62,
+    75
+   ],
+   "source_rect": [
+    1281,
+    558,
+    1351,
+    641
+   ]
+  },
+  "sign_keep_out": {
+   "file": "props/sign_keep_out.png",
+   "size": [
+    64,
+    75
+   ],
+   "source_rect": [
+    1655,
+    558,
+    1727,
+    641
+   ]
+  },
+  "gallows": {
+   "file": "props/gallows.png",
+   "size": [
+    117,
+    175
+   ],
+   "source_rect": [
+    878,
+    989,
+    1003,
+    1172
+   ]
+  },
+  "lantern_glow": {
+   "file": "props/lantern_glow.png",
+   "size": [
+    59,
+    53
+   ],
+   "source_rect": [
+    155,
+    1049,
+    222,
+    1110
+   ]
+  },
+  "crow": {
+   "file": "props/crow.png",
+   "size": [
+    76,
+    65
+   ],
+   "source_rect": [
+    521,
+    1043,
+    605,
+    1116
+   ]
+  },
+  "sign_01": {
+   "file": "props/sign_01.png",
+   "size": [
+    60,
+    74
+   ],
+   "source_rect": [
+    1282,
+    1039,
+    1350,
+    1121
+   ]
+  },
+  "sign_02": {
+   "file": "props/sign_02.png",
+   "size": [
+    60,
+    74
+   ],
+   "source_rect": [
+    1657,
+    1039,
+    1725,
+    1121
+   ]
+  },
+  "sign_03": {
+   "file": "props/sign_03.png",
+   "size": [
+    61,
+    75
+   ],
+   "source_rect": [
+    2033,
+    1039,
+    2102,
+    1122
+   ]
+  },
+  "sign_04": {
+   "file": "props/sign_04.png",
+   "size": [
+    61,
+    74
+   ],
+   "source_rect": [
+    2409,
+    1039,
+    2478,
+    1121
+   ]
+  },
+  "sign_05": {
+   "file": "props/sign_05.png",
+   "size": [
+    60,
+    74
+   ],
+   "source_rect": [
+    2786,
+    1039,
+    2854,
+    1121
+   ]
+  },
+  "sign_06": {
+   "file": "props/sign_06.png",
+   "size": [
+    61,
+    74
+   ],
+   "source_rect": [
+    3162,
+    1039,
+    3231,
+    1121
+   ]
+  },
+  "coin_alt": {
+   "file": "props/coin_alt.png",
+   "size": [
+    68,
+    67
+   ],
+   "source_rect": [
+    3534,
+    1043,
+    3610,
+    1118
+   ]
+  },
+  "cart": {
+   "file": "props/cart.png",
+   "size": [
+    216,
+    131
+   ],
+   "source_rect": [
+    3412,
+    1279,
+    3632,
+    1418
+   ]
+  },
+  "gem": {
+   "file": "props/gem.png",
+   "size": [
+    64,
+    65
+   ],
+   "source_rect": [
+    152,
+    1523,
+    224,
+    1596
+   ]
+  },
+  "chest": {
+   "file": "props/chest.png",
+   "size": [
+    75,
+    66
+   ],
+   "source_rect": [
+    523,
+    1522,
+    606,
+    1596
+   ]
+  },
+  "chest_open": {
+   "file": "props/chest_open.png",
+   "size": [
+    154,
+    76
+   ],
+   "source_rect": [
+    859,
+    1518,
+    1021,
+    1602
+   ]
+  },
+  "minecart": {
+   "file": "props/minecart.png",
+   "size": [
+    80,
+    76
+   ],
+   "source_rect": [
+    1272,
+    1518,
+    1360,
+    1602
+   ]
+  },
+  "potion": {
+   "file": "props/potion.png",
+   "size": [
+    54,
+    71
+   ],
+   "source_rect": [
+    1660,
+    1520,
+    1722,
+    1599
+   ]
+  },
+  "key_silver": {
+   "file": "props/key_silver.png",
+   "size": [
+    70,
+    34
+   ],
+   "source_rect": [
+    2029,
+    1539,
+    2107,
+    1581
+   ]
+  },
+  "key_gold": {
+   "file": "props/key_gold.png",
+   "size": [
+    70,
+    34
+   ],
+   "source_rect": [
+    2405,
+    1538,
+    2483,
+    1580
+   ]
+  },
+  "skull": {
+   "file": "props/skull.png",
+   "size": [
+    40,
+    44
+   ],
+   "source_rect": [
+    2795,
+    1534,
+    2843,
+    1586
+   ]
+  },
+  "bone": {
+   "file": "props/bone.png",
+   "size": [
+    51,
+    25
+   ],
+   "source_rect": [
+    3166,
+    1543,
+    3225,
+    1576
+   ]
+  },
+  "goo": {
+   "file": "props/goo.png",
+   "size": [
+    78,
+    32
+   ],
+   "source_rect": [
+    3529,
+    1540,
+    3615,
+    1580
+   ]
+  },
+  "gate_spikes": {
+   "file": "props/gate_spikes.png",
+   "size": [
+    147,
+    78
+   ],
+   "source_rect": [
+    110,
+    1757,
+    265,
+    1843
+   ]
+  },
+  "spring": {
+   "file": "props/spring.png",
+   "size": [
+    59,
+    40
+   ],
+   "source_rect": [
+    906,
+    1776,
+    973,
+    1824
+   ]
+  }
+ },
+ "ui": {
+  "coin": {
+   "file": "ui/coin.png",
+   "size": [
+    63,
+    67
+   ],
+   "source_rect": [
+    152,
+    1282,
+    223,
+    1357
+   ]
+  },
+  "coin_spin_01": {
+   "file": "ui/coin_spin_01.png",
+   "size": [
+    43,
+    67
+   ],
+   "source_rect": [
+    538,
+    1282,
+    589,
+    1357
+   ]
+  },
+  "coin_spin_02": {
+   "file": "ui/coin_spin_02.png",
+   "size": [
+    22,
+    67
+   ],
+   "source_rect": [
+    925,
+    1282,
+    955,
+    1357
+   ]
+  },
+  "coin_spin_03": {
+   "file": "ui/coin_spin_03.png",
+   "size": [
+    44,
+    67
+   ],
+   "source_rect": [
+    1290,
+    1282,
+    1342,
+    1357
+   ]
+  },
+  "star": {
+   "file": "ui/star.png",
+   "size": [
+    68,
+    64
+   ],
+   "source_rect": [
+    3654,
+    1301,
+    3730,
+    1373
+   ]
+  },
+  "heart_full": {
+   "file": "ui/heart_full.png",
+   "size": [
+    70,
+    63
+   ],
+   "source_rect": [
+    3653,
+    1222,
+    3731,
+    1293
+   ]
+  }
+ },
+ "backgrounds": {
+  "night_1": {
+   "file": "backgrounds/night_1.png",
+   "size": [
+    373,
+    211
+   ],
+   "source_rect": [
+    374,
+    1690,
+    755,
+    1909
+   ]
+  },
+  "night_2": {
+   "file": "backgrounds/night_2.png",
+   "size": [
+    373,
+    110
+   ],
+   "source_rect": [
+    1125,
+    1741,
+    1506,
+    1859
+   ]
+  }
+ },
+ "_meta": {
+  "source_sheets": {
+   "knight": "art/knight_grid.png 1920x720 (3 rows x 8 cells @240px)",
+   "skeleton": "art/skeleton4_grid.png 1344x504 (3 rows x 8 cells @168px)",
+   "archer": "art/skeleton3_grid.png 1216x360 (3 rows x 8 cells @152x120px)",
+   "tiles": "art/sheet_9_grid.png 560x384",
+   "props/ui/backgrounds": "art/plague_town_grid.png 3760x1920"
+  },
+  "frame_trim": "per-animation union trim: every frame of an animation shares frame_size and alignment; cell_offset is the crop's top-left inside the source cell, cell_size the source cell pitch (use them to re-align animations of one entity)",
+  "notes": [
+   "sheets are NOT uniform 5-row grids: characters are laid out row-major, 8 cells/row, frames grouped into animations by the declared frame counts",
+   "knight attack1 = horizontal thrust, attack2 = slash (last 8 cells of row 3)",
+   "archer arrow.png sits in the cell right after the attack frames",
+   "heart_empty.png absent from source art"
+  ]
+ }
+}
